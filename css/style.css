@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', 'Segoe UI', Tahoma;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 140px;
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    position: fixed;
+    top: 0px;
+    opacity: 0.9;
+    z-index: 11;
+}
+
+#nav h2 a{
+    font-size: 1.5rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+nav{
+    height: 100%;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+li{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+li a{
+    color: #ffffff;
+    font-weight: 300;
+    padding: 0 18px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+li a:hover,
+.active{
+    background-color: #272626;
+    color: #C7DAF7;
+    font-weight: 400;
+    border-bottom: 3px solid #C7DAF7;
+}
+
+.hero{
+    background: url('../img/main-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+}
+
+.hero::before{
+    content: '';
+    position: absolute; /* That's why for hero's position is relative */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #00000095; /* this willprovide an overlay to an entire .hero, so we need to assign z-index property for everything inside .hero to bring it forward */
+}
+
+.hero *{
+    z-index: 10;
+}
+
+.hero .content{
+    /* put everything in center */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Above properties will set the content in the center of the div, and since the div height is equal to content wrap, we need to set height to 100% which is 100vh of from parent*/
+    height: 100%; /*Now everything is in the center. */
+    padding: 0 20px; /* So it does not rub up against the sides for smaller screens*/
+    color: #ffffff;
+}
+
+.content h1{
+    font-size: 5rem;
+    font-weight: 400;
+}
+
+.content p{
+    padding: 5px;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.icons{
+    padding: 30px;
+}
+
+.flex-items{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* this will be applicable only for the immediate div and not for the all of the nested div
+For all of the nested div apply => .flex-items div  */
+.flex-items>div{
+    padding: 30px;
+    max-width: 500px;
+}
+
+.flex-items i{
+    width: 100px;
+    height: 100px;
+    padding-top: 1.6rem;
+    border-radius: 50%;
+}
+
+.flex-items h3{
+    letter-spacing: 1.5px;
+}
+
+/* Customers */
+
+#customers .header{
+    padding: 10px 20px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#customers .header h3{
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.flex-row-pics{
+    display: flex;
+}
+
+.flex-column-pics{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+}
+
+#customers img{
+    object-fit: cover;
+    width: 100%;
+    height: 50%;
+    padding: 5px;
+}
+
+#footer{
+    height: 90px;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+#footer>div{
+    display: flex;
+}
+
+#footer i{
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+#footer i:hover{
+    color: #C7DAF7;
+}
+
+#footer div:last-child{
+    padding-bottom: 10px;
+}
+
+#footer a{
+    color: #ffffff;
+}
+
+/* Mobile */
+@media(max-width: 880px){
+
+    #nav{
+        flex-direction: column;
+        height: 100px;
+        padding: 15px;
+        padding-bottom: 10px;
+        align-items: center;
+    }
+
+    #nav a{
+        padding: 0 10px;
+        font-weight: 200;
+    }
+
+    li a:hover,
+    .active{
+        background-color: #272626;
+        color: #C7DAF7;
+        font-weight: 300;
+        border-bottom: 1px solid #C7DAF7;
+    }
+
+    .content h1{
+        font-size: 1.96rem;
+        text-align: center;
+    }
+
+    .content p{
+        font-size: 1rem;
+        padding-bottom: 0px;
+        text-align: center;
+    }
+
+    .btn{
+        font-size: 0.9rem;
+        font-weight: 300;
+        background-color: #455783;
+        line-height: 30px;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        margin-top: 20px;
+        padding: 3px 9px;
+        text-align: center;
+    }
+
+    .icons{
+        padding: 10px;
+    }
+
+    .flex-items{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex-items>div{
+        padding: 20px;
+        max-width: 350px;
+    }
+
+    .flex-items i{
+        width: 70px;
+        height: 70px;
+        padding-top: 0.75rem;
+        border-radius: 50%;
+    }
+
+    .flex-row{
+        display: flex;
+        flex-direction: column-reverse;
+        height: 100%;
+    }
+
+    .flex-row .column-1,
+    .flex-row .column-2{
+        flex-basis: 100%;
+    }
+
+    .flex-row .column-1{
+        height: 300px;
+    }
+
+    .flex-row .column-1 img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .flex-row .column-2 div h3{
+        font-size: 1.8rem;
+        padding-bottom: 10px;
+    }
+
+    .flex-row .column-2 p{
+        font-size: 0.8rem;
+        padding-bottom: 20px;
+    }
+
+    .flex-row .column-1 img:hover{
+        opacity: 0.8;
+    }
+
+    .bdr-btm{
+        border: none;
+    }
+
+    #customers .header{
+        padding: 20px 10px;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    #customers .header h3{
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .flex-row-pics{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex-column-pics{
+        display: flex;
+        flex-direction: column;
+        height: 600px;
+    }
+    
+    #customers img{
+        object-fit: cover;
+        width: 100%;
+        height: 50%;
+        padding: 5px;
+    }
+}
+
+
